@@ -155,7 +155,7 @@ func setupDbusEnvironment() (err error) {
 func execOmxplayer(url string) (cmd *exec.Cmd, err error) {
 	log.Debug("omxplayer: starting omxplayer process")
 
-	cmd = exec.Command(exeOxmPlayer, "--no-osd", url)
+	cmd = exec.Command(exeOxmPlayer, "--no-osd -o hdmi", url)
 	cmd.Stdin = strings.NewReader(keyPause)
 	err = cmd.Start()
 	return
